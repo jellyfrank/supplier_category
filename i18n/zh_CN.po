@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* supplier_category
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-11 06:24+0000\n"
+"PO-Revision-Date: 2015-04-11 14:26+0800\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: supplier_category
+#: model:ir.actions.act_window,name:supplier_category.action_supplier_category
+msgid "Categorize Suppliers"
+msgstr "供应商分类"
+
+#. module: supplier_category
+#: field:res.partner,category:0
+msgid "Category"
+msgstr "类别"
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_supplier_category
+msgid "Supplier Category"
+msgstr "供应商分类"
+
+#. module: supplier_category
+#: field:supplier.category,complete_name:0
+msgid "Display Name"
+msgstr "名称"
+
+#. module: supplier_category
+#: field:supplier.category,name:0
+msgid "Category Name"
+msgstr "名称"
+
+#. module: supplier_category
+#: field:supplier.category,child_id:0
+msgid "Child Category"
+msgstr "子分类"
+
+#. module: supplier_category
+#: field:supplier.category,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: supplier_category
+#: field:supplier.category,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: supplier_category
+#: field:supplier.category,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: supplier_category
+#: field:supplier.category,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: supplier_category
+#: field:supplier.category,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: supplier_category
+#: field:supplier.category,parent_id:0
+msgid "Parent Category"
+msgstr "父级分类"
+
+#. module: supplier_category
+#: field:supplier.category,parent_left:0
+msgid "Parent Left"
+msgstr "Parent Left"
+
+#. module: supplier_category
+#: field:supplier.category,parent_right:0
+msgid "Parent Right"
+msgstr "Parent Right"
+
+#. module: supplier_category
+#: model:ir.model,name:supplier_category.model_res_partner
+msgid "Partner"
+msgstr "业务伙伴"
+
+#. module: supplier_category
+#: model:ir.actions.act_window,name:supplier_category.action_supplier_list_category
+#: model:ir.actions.act_window,name:supplier_category.action_supplier_tree_category
+#: model:ir.ui.menu,name:supplier_category.menu_supplier_category
+#: view:supplier.category:supplier_category.supplier_category_form_view
+#: view:supplier.category:supplier_category.supplier_category_tree
+msgid "Supplier Category"
+msgstr "供应商分类"
+
+#. module: supplier_category
+#: model:ir.ui.menu,name:supplier_category.menu_supplier_category_normal
+msgid "Supplier Category Noraml"
+msgstr "供应商分类"

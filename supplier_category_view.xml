@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="supplier_category_form_view">
+			<field name="name">supplier.category.form</field>
+			<field name="model">supplier.category</field>
+			<field name="arch" type="xml">
+				<form string="Supplier Category">
+					<group>
+						<field name="name"/>
+						<field name="parent_id"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="supplier_category_tree">
+			<field name="name">supplier.category.tree</field>
+			<field name="model">supplier.category</field>
+			<field name="field_parent">child_id</field>
+			<field name="arch" type="xml">
+				<tree toolbar="True" string="Supplier Category">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_supplier_tree_category">
+			<field name="name">Supplier Category</field>
+			<field name="res_model">supplier.category</field>
+			<field name="view_type">tree</field>
+			<field name="domain">[('parent_id','=',False)]</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_supplier_list_category">
+			<field name="name">Supplier Category</field>
+			<field name="res_model">supplier.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_supplier_category">
+			<field name="name">Categorize Suppliers</field>
+			<field name="res_model">res.partner</field>
+			<field name="domain">[("supplier",'=',True)]</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'category':active_id, 'search_default_category':active_id}</field>
+		</record>
+
+		<record model="ir.ui.view" id="supplier_category_search_view">
+			<field name="name">supplier.category.search.view</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_res_partner_filter"/>
+			<field name="arch" type="xml">
+				<field name="category_id" position="after">
+					<field name="category"/>
+				</field>
+			</field>
+		</record>
+
+		<record model="ir.values" id="ir_supplier_categories">
+			<field name="name">Supplier Categories</field>
+			<field name="model" eval="'supplier.category'"/>
+			<field name="value" eval="'ir.actions.act_window,%d'%action_supplier_category"/>
+			<field name="key2" eval="'tree_but_open'"/>
+		</record>
+
+		<menuitem id="menu_supplier_category" name="Supplier Category" parent="purchase.menu_procurement_management" action="action_supplier_tree_category"/>
+
+		<menuitem id="menu_supplier_category_normal" name="Supplier Category Noraml" parent="purchase.menu_purchase_partner_cat"
+			action="action_supplier_list_category"/>
+
+		<record model="ir.ui.view" id="supplier_category_inheirt_form"> 
+			<field name="name">supplier.category.inherit.form</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='sales_purchases']/group/group/field[@name='supplier']" position='after'>	
+					<field name="category"/>								
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>
